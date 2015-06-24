@@ -1,0 +1,44 @@
+<?php
+
+/**
+ *
+ * Implement uninstall prev module version
+ */
+ function cv_timeline_update_7200() {
+   if( module_exists('cv_timeline')) {
+     module_disable(array('cv_timeline'));
+     drupal_uninstall_modules(array('cv_timeline'));
+
+     db_delete('block')->condition('module', 'cv_timeline')->condition('delta', 'cv_timeline-block')->execute();
+   }
+ }
+
+/**
+ * @file
+ * Install file for "CV Timeline".
+ */
+function cv_timeline_install(){
+  variable_set('cv_timeline_block_type',t('timeline'));
+  variable_set('cv_timeline_block_width', 800);
+  variable_set('cv_timeline_block_height', 600);
+  variable_set('cv_timeline_block_font', t('verdana, arial, sans-serif'));
+  variable_set('cv_timeline_block_size', t('16px'));
+  variable_set('cv_timeline_block_weight', t('normal'));
+  //variable_set('cv_timeline_block_jsonpath');
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function cv_timeline_uninstall() {
+  variable_del('cv_timeline_block_type');
+  variable_del('cv_timeline_block_width');
+  variable_del('cv_timeline_block_height');
+  variable_del('cv_timeline_block_font');
+  variable_del('cv_timeline_block_jsonpath');
+  variable_del('cv_timeline_block_uploadedfile');
+
+  file_unmanaged_delete_recursive(drupal_get_path('module', 'cv_timeline'));
+
+  db_delete('block')->condition('module', 'cv_timeline')->condition('delta', 'cv_timeline-block')->execute();
+}

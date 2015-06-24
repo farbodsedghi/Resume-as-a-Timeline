@@ -1,0 +1,168 @@
+{
+  "timeline": {
+    "headline": "Farbod Sedghi",
+    "text": "More than 14 years experience in applied information technology. Expertise in T-SQL and C based languages such as C/C++, Java, and C#.NET. Proficiency in mobile app programming on Android, and web-based developing on Joomla CMS and Drupal. https://www.linkedin.com/in/tredolf",
+    "type": "default",
+    "asset": {
+      "media": "",
+      "caption": "a short history by Farbod Sedghi",
+      "credit": "The Tredolf Community"
+    },
+    "date": [
+      {
+        "startDate": "2014,10,1",
+        "endDate": "",
+        "headline": "IT Consultant at ITEVO LLC. https://www.itevollc.com/",
+        "text": "Native Android Apps Development - Java, High-Level Development on The Drupal Platform, Drupal Custom Module Development - PHP/MySQL, JavaScript/jQuery, and HTML/CSS, Low-Level Programming with C/C++.",
+        "tag": "Freelancer",
+        "asset": {
+          "media": "",
+          "caption": "",
+          "thumbnail": "",
+          "credit": ""
+        },
+        "type": ""
+      },
+      {
+        "startDate": "2014,2,1",
+        "endDate": "",
+        "headline": "Web Consultant at Encrafts Shop. http://shop.encrafts.com/",
+        "text": "E-commerce Web Development on Magento Platform – PHP/MySQL, Magento Custom Theme Designing Responsive Web Design – Mustache, JavaScript/jQuery, and HTML/CSS, Perform Web Services and APIs integrating with Social Media Facebook,Google..., Search Engine Optimization – based on Google, Bing, and Yahoo.",
+        "tag": "Freelancer",
+        "asset": {
+          "media": "",
+          "caption": "",
+          "thumbnail": "",
+          "credit": ""
+        },
+        "type": ""
+      },
+      {
+        "startDate": "2012,3,1",
+        "endDate": "2014,6,1",
+        "headline": "Web Consultant at iAmerica Magazine. http://cms.iamericamagazine.com/",
+        "text": "iOS and Android Native Apps Development – C and Java, Facebook Pages and Apps Development –Heroku with Git source control, E-Magazine Web Development on Joomla Platform including Templates And Modules, Social Media Web Development - PHP/MySQL, JavaScript/JQuery, and HTML5/CSS3, Online marketing involved SEO, SEM, LPO, and SMM – based on Google, Bing, and Yahoo, Web Services and APIs integrating with Social Media such as LinkedIn, Facebook, and Google+, Creating Online Marketing Strategy, Content Development Strategy, and Web Business Development.",
+        "tag": "Freelancer",
+        "asset": {
+          "media": "",
+          "caption": "",
+          "thumbnail": "",
+          "credit": ""
+        },
+        "type": ""
+      },
+      {
+        "startDate": "2012,7,1",
+        "endDate": "2013,10,1",
+        "headline": "Review and EME Quality Control at Telnet-Inc. http://www.telnet-inc.com/",
+        "text": "Creating EME Reports to Quality Control, Comparing and Modifying Existing EME Reports, Being responsible for report creation and site drawing involved RF simulation for GSM, UMTS, and LTE, Word Processing, Spreadsheet Data Analyzing, and Visio Drawing to the Appropriate Simulation Constructs.",
+        "tag": "Temporary",
+        "asset": {
+          "media": "",
+          "caption": "",
+          "thumbnail": "",
+          "credit": ""
+        },
+        "type": ""
+      },
+      {
+        "startDate": "2012,2,1",
+        "endDate": "2013,12,1",
+        "headline": "Computer Systems Specialist at XModdz. http://www.xmoddz.com/",
+        "text": "Performing technical troubleshooting and repairing desktops, laptops, XBOX, and PlayStation, Developing Web OsTicket involved Task Managing - PHP/MySQL., Developing Frontend Drupal 6, 7 – about two months, Business Consultant to Market Development.",
+        "tag": "Self-Employee",
+        "asset": {
+          "media": "",
+          "caption": "",
+          "thumbnail": "",
+          "credit": ""
+        },
+        "type": ""
+      },
+      {
+        "startDate": "2001,2,1",
+        "endDate": "2011,1,1",
+        "headline": "CEO and Software Systems Engineer at FSN-Corp. http://www.farsana.co.ir/",
+        "text": "Managing Director, Chief Executive, and Business Developer, Leading Projects and Systems Engineering based on ERP and MIS such as FRM, HRM, CPM, and CRM, Programming with C/C++, Java, C#.NET, and SQL Server, Scripting with PHP/MySQL to develop CMS based on Joomla, Drupal, Magento, Moodle, and more.",
+        "tag": "Manager",
+        "asset": {
+          "media": "",
+          "caption": "",
+          "thumbnail": "",
+          "credit": ""
+        },
+        "type": ""
+      },
+      {
+        "startDate": "2005,1,1",
+        "endDate": "2009,2,1",
+        "headline": "Computer Sciences Professor at Applied-scientific Higher Education Institute. http://uast.ac.ir/",
+        "text": "Teaching System Engineering, Computer Networks, Computer Programming, Web Developing, and Working on Content Management Systems",
+        "tag": "Professor",
+        "asset": {
+          "media": "",
+          "caption": "",
+          "thumbnail": "",
+          "credit": ""
+        },
+        "type": ""
+      },
+      {
+        "startDate": "2003,12,1",
+        "endDate": "2005,4,1",
+        "headline": "Professional Trainer at Ministry of Energy Tehran Higher Education. http://ieht.ac.ir/",
+        "text": "Working as Education Administrator and Human Resources Trainer on Computer Courses Such As Windows and Microsoft Office",
+        "tag": "Trainer",
+        "asset": {
+          "media": "",
+          "caption": "",
+          "thumbnail": "",
+          "credit": ""
+        },
+        "type": ""
+      },
+      {
+        "startDate": "2000,2,1",
+        "endDate": "2001,2,1",
+        "headline": "System Administrator at ISACO, IKCO. http://isaco.ir/",
+        "text": "Performing Computer Maintenance, Troubleshooting, Network Support, Working as Database Administration with Oracle DB and Informix on Windows and Solaris SunOS.",
+        "tag": "Employee",
+        "asset": {
+          "media": "",
+          "caption": "",
+          "thumbnail": "",
+          "credit": ""
+        },
+        "type": ""
+      },
+      {
+        "startDate": "1997,2,1",
+        "endDate": "1998,2,1",
+        "headline": "Computer Department Secretary at RIAU, Azad University. http://riau.ac.ir/",
+        "text": "Working as Compute Department Secretary and Workshop Administrator to Support Students working on MS-DOS, Windows, Novell Netware, COBOL, Fox Pro, and Computer Languages such as C/C++, Pascal, and QBASIC",
+        "tag": "Secretary",
+        "asset": {
+          "media": "",
+          "caption": "",
+          "thumbnail": "",
+          "credit": ""
+        },
+        "type": ""
+      },
+      {
+        "startDate": "1993,2,1",
+        "endDate": "1998,2,1",
+        "headline": "Application Developer at Fagr LLC",
+        "text": "Developing Marketing and Distributing Application with Fox pro 2.6 on MS-DOS and Windows 95-98",
+        "tag": "",
+        "asset": {
+          "media": "",
+          "caption": "",
+          "thumbnail": "",
+          "credit": ""
+        },
+        "type": ""
+      }
+    ]
+  }
+}

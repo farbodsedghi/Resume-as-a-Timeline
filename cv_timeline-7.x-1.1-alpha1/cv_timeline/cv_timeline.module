@@ -1,0 +1,214 @@
+<?php
+
+/**
+ * @file
+ * Module file for "CV Timeline"..
+ */
+
+drupal_add_js(drupal_get_path('module', 'cv_timeline').'/js/cv_library.js');
+drupal_add_css(drupal_get_path('module', 'cv_timeline').'/js/cv_timeline.css');
+
+if(stristr($_SERVER['HTTP_USER_AGENT'],'Trident/7.0;')){
+    // MSIE Browser
+    drupal_add_css(drupal_get_path('module', 'cv_timeline').'/js/msie_cv_timeline.css', array('browsers' => array(
+        'IE' => FALSE,
+        '!IE' => TRUE
+    )));
+} else {
+    // Mozilla, Opera, Chrome, Safari
+    drupal_add_css(drupal_get_path('module', 'cv_timeline').'/js/none_cv_timeline.css', array('browsers' => array(
+        'IE' => FALSE,
+        '!IE' => TRUE
+    )));
+}
+
+
+drupal_add_js('http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js', 'external');
+drupal_add_js('http://cdn.knightlab.com/libs/timeline/latest/js/storyjs-embed.js', 'external');
+
+
+/**
+ * Implements hook_block_info().
+ *
+ * Provides one block named 'cv Timeline' that is globally cached.
+ */
+
+function cv_timeline_block_info() {
+    $blocks['cv_timeline-block'] = array(
+        'info' => t('cv Timeline'),
+        'cache' => DRUPAL_CACHE_GLOBAL,
+    );
+    return $blocks;
+}
+
+
+/**
+ * Implements hook_block_view().
+ *
+ * Renders a HTML-span containing the cv Timeline.
+ */
+
+function cv_timeline_block_view($delta = 'cv_timeline_block') {
+
+    $block = array();
+    $mpath = drupal_get_path('module', 'cv_timeline');
+    $jpath = t('/js/farbod_1_1.json');
+
+    //if ($delta == 'cv_timeline_delta') {
+
+    $settings = array(
+        'embed_id' => t('my-timeline'),
+        'type' => variable_get('cv_timeline_block_type'),
+        'width' => variable_get('cv_timeline_block_width'),
+        'height' => variable_get('cv_timeline_block_height'),
+        'font' => variable_get('cv_timeline_block_font'),
+        'size' => variable_get('cv_timeline_block_size'),
+        'weight' => variable_get('cv_timeline_block_weight'),
+        'json' => variable_get('cv_timeline_block_jsonpath',$mpath.$jpath),
+    );
+
+    drupal_add_js(array('cv_timeline' => $settings), 'setting');
+
+
+    drupal_add_js(drupal_get_path('module', 'cv_timeline').'/js/cv_milestone.js');
+
+    $block = array(
+      'subject' => t('Timeline'),
+      'content' => array(
+        '#markup' => '<div><input type="button" id="driver" class="timelineButton" value="View the list of milestones" /><div id="my-timeline"></div></div>',
+      ),
+    );
+   //}
+   return $block;
+     
+}
+
+/**
+ * Implements hook_block_configure().
+ *
+ * Creates the form data to set the cv Timeline Section and Block Size.
+ */
+function cv_timeline_block_configure($delta = 'cv_timeline_block') {
+    $form = array();
+    $block = block_load('cv_timeline_block', $delta);
+    //if ($delta == 'cv_timeline_delta') {
+
+        // Select field for the timeline type.
+        $timeline = array(
+            'timeline' => 'Timeline',
+        );
+
+        // Select timeline type
+
+        $form['cv_timeline_block_type'] = array(
+            '#type' => 'select',
+            '#title' => t('Type'),
+            '#options' => $timeline,
+            '#description' => t('Size of the cv Timeline to display in block'),
+            '#default_value' => variable_get('cv_timeline_block_type', t('timeline')),
+        );
+
+        // Select field for the width.
+
+        $form['cv_timeline_block_width'] = array(
+            '#type' => 'textfield',
+            '#title' => t('Width'),
+            //'#size' => 60,
+            '#description' => t('Size of the cv Timeline to display in block'),
+            '#default_value' => variable_get('cv_timeline_block_width', 800),
+        );
+
+        // Select field for the width.
+
+        $form['cv_timeline_block_height'] = array(
+            '#type' => 'textfield',
+            '#title' => t('Height'),
+            //'#size' => 60,
+            '#description' => t('Size of the cv Timeline to display in block'),
+            '#default_value' => variable_get('cv_timeline_block_height', 600),
+        );
+
+        // Select field for the milestones font.
+        $form['cv_timeline_block_font'] = array(
+            '#type' => 'textfield',
+            '#title' => t('Font Family'),
+            //'#size' => 60,
+            '#description' => t('The font of milestones view to display in block'),
+            '#default_value' => variable_get('cv_timeline_block_font', t('verdana')),
+        );
+
+        // Select field for the milestones font size.
+        $form['cv_timeline_block_size'] = array(
+            '#type' => 'textfield',
+            '#title' => t('Font Size'),
+            //'#size' => 60,
+            '#description' => t('The font size of milestones view to display in block'),
+            '#default_value' => variable_get('cv_timeline_block_size', t('16x')),
+        );
+
+        // Select field for the milestones font weight.
+        $form['cv_timeline_block_weight'] = array(
+            '#type' => 'textfield',
+            '#title' => t('Font Weight'),
+            //'#size' => 60,
+            '#description' => t('The font weight of milestones view to display in block'),
+            '#default_value' => variable_get('cv_timeline_block_weight', t('normal')),
+        );
+
+        // File selection form element
+        $form['cv_timeline_block_uploadedfile'] = array(
+            '#name' => 'json_file',
+            '#type' => 'managed_file',
+            '#title' => t('JSON FILE'),
+            '#description' => t('Upload a file, allowed extensions: json'),
+            '#default_value' => variable_get('cv_timeline_block_uploadedfile', ''),
+            '#upload_location' => 'public://block_json/',
+            '#upload_validators' => array(
+                'file_validate_extensions' => array('json'),
+            ),
+        );
+
+    //}
+    return $form;
+}
+
+
+/**
+ * Implements hook_block_save().
+ *
+ * Stores the cv Timeline block size and news sections
+ */
+function cv_timeline_block_save($delta = 'cv_timeline_block', $edit = array()) {
+    //if ($delta == 'cv_timeline_delta') {
+
+        //$block = block_load('cv_timeline_block', $delta);
+
+        variable_set('cv_timeline_block_type', $edit['cv_timeline_block_type']);
+
+        variable_set('cv_timeline_block_width', $edit['cv_timeline_block_width']);
+
+        variable_set('cv_timeline_block_height', $edit['cv_timeline_block_height']);
+
+        variable_set('cv_timeline_block_size', $edit['cv_timeline_block_size']);
+
+        variable_set('cv_timeline_block_weight', $edit['cv_timeline_block_weight']);
+
+        variable_set('cv_timeline_block_font', $edit['cv_timeline_block_font']);
+
+        variable_set('cv_timeline_block_size', $edit['cv_timeline_block_size']);
+
+        variable_set('cv_timeline_block_uploadedfile', $edit['cv_timeline_block_uploadedfile']);
+
+        // Saving the file, setting it to a permanent state, setting a FID variable
+        if ($edit['cv_timeline_block_uploadedfile'] > 0){
+            $file = file_load($edit['cv_timeline_block_uploadedfile']);
+            $file_url = file_create_url($file->uri);
+            $file->status = FILE_STATUS_PERMANENT;
+            file_save($file);
+            //file_usage_add($file, 'cv_timeline_block', 'block', $block->bid);
+            //variable_set('cv_timeline_block_uploadedfile',$$file->uri);
+            variable_set('cv_timeline_block_jsonpath', $file_url);
+        }
+
+    //}
+}

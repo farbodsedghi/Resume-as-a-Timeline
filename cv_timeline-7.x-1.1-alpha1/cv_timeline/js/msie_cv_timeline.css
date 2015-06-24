@@ -1,0 +1,30 @@
+@charset "utf-8";
+/* CSS Document */
+/* Timeline View (override)*/
+.slider-item span.slide-tag {
+	display: none !important;
+}
+
+.slider-item h2.date{
+	font-size: 95% !important;
+}
+
+.slider-item .hyphenate{
+    position:absolute;
+    width: 50%;
+    display: table-cell;
+}
+
+.slider-item div.container{
+
+    display: inline-table;
+
+    white-space: pre-line;
+
+    text-align: justify !important;
+
+	-ms-hyphens: auto !important;
+
+	hyphens: auto; !important;
+
+}

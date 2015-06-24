@@ -1,0 +1,44 @@
+@charset "utf-8";
+/* CSS Document */
+/* Timeline View (override)*/
+.slider-item span.slide-tag {
+	display: none !important;
+}
+
+.slider-item h2.date{
+	font-size: 95% !important;
+}
+
+.slider-item .hyphenate{
+    visibility: hidden;
+}
+
+.slider-item .hyphenate::before{
+	content:'Read more';
+	visibility: visible;
+    display: table-cell;
+}
+
+.slider-item div.container{
+
+    display: block;
+
+    -moz-word-break: normal;
+
+    -o-word-break: break-all;
+
+    word-break: break-word;
+
+    text-align: justify !important;
+
+    -webkit-text-justify: auto;
+
+    -webkit-hyphens: auto;
+
+	-moz-hyphens: auto;
+
+	-o-hyphens: auto;
+
+	hyphens: auto;
+
+}

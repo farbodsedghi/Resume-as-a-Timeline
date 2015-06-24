@@ -1,0 +1,15 @@
+name = CV Timeline
+description = Using JSON file and TimelineJS, adds a Timeline block to your site.
+package = Blocks
+core = 7.x
+dependencies[] = block
+
+version = "7.x-1.1-alpha1"
+core = "7.x"
+
+scripts[] = js/cv_milestone.js
+scripts[] = js/cv_timeline.css
+scripts[] = js/msie_cv_timeline.css
+scripts[] = js/none_cv_timeline.css
+
+project = "cv_timeline"

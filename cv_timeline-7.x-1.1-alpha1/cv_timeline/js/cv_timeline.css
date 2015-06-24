@@ -1,0 +1,54 @@
+@charset "utf-8";
+/* CSS Document */
+/* Button */
+.timelineButton {
+    background-color:#ededed;
+    -moz-border-radius:14px;
+    -webkit-border-radius:14px;
+    border-radius:14px;
+    border:1px solid #dcdcdc;
+    display:inline-block;
+    cursor:pointer;
+    color:#777777;
+    font-family:arial;
+    font-size:12px;
+    padding:8px 40px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #ffffff;
+}
+.timelineButton:hover {
+    background-color:#dfdfdf;
+}
+.timelineButton:active {
+    position:relative;
+    top:1px;
+}
+
+/* Milestone View */
+.milestones{
+    font-family: verdana, arial, sans-serif;
+    font-size:16px;
+    font-weight: normal;
+}
+
+.milestones .contents{
+    align-items: stretch !important;
+    text-align: justify !important;
+    margin-top: 5px !important;
+}
+
+.milestones .images{
+    float: left;
+    width: 100px;
+    padding: 5px;
+}
+
+.milestones .bold{
+	text-align: justify !important;
+	font-weight: bold !important;
+}
+
+.milestones .date{
+	margin-top: -10px !important;
+    margin-bottom: 5px !important;
+}
